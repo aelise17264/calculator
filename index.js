@@ -22,6 +22,14 @@ app.post("/", function(req, res){
     res.send("<h2>Result " + result + "</h2>");
 });
 
+app.post("/bmicalculator", function(req, res){
+    var weight = Number(req.body.weight)
+    var height = Math.pow(Number(req.body.height), 2)
+    var yourBMI = Math.floor(weight/height)
+
+    res.send("<h1>Your BMI is " + yourBMI + "</h1>")
+})
+
 app.listen(3000, function(){
     console.log("Server is running on port 3000")
 })
